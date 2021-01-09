@@ -90,5 +90,5 @@ textarea:focus {
 
 .actions {
   text-align: center;
-}</style
->>
+}
+</style>

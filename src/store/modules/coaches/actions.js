@@ -12,10 +12,15 @@ export default {
       areas: data.areas
     };
 
-    const response = await fetch(`${coachFirebaseURL}/coaches/${userId}.json`, {
-      method: 'PUT',
-      body: JSON.stringify(coachData)
-    });
+    const token = context.rootGetters.token;
+
+    const response = await fetch(
+      `${coachFirebaseURL}/coaches/${userId}.json?auth=${token}`,
+      {
+        method: 'PUT',
+        body: JSON.stringify(coachData)
+      }
+    );
     // const responseData = await response.json();
 
     if (!response.ok) {
